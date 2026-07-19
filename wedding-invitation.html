@@ -3,36 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دعوة زفاف | علي وياسمين</title>
+<title>دعوة زفاف | حمد ونورة</title>
 
-<!-- خطوط جوجل: Amiri للنصوص الدينية والعناوين، Tajawal للنصوص العامة -->
+<!-- خطوط جوجل: Amiri للنصوص الدينية والعناوين والأسماء، Tajawal للنصوص العامة -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;500;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --gold-light:#E9CE86;
-    --gold:#D4AF37;
-    --gold-mid:#C9A84C;
-    --gold-dark:#8B7532;
-    --navy-deep:#0d1b2a;
-    --navy:#141e33;
-    --navy-light:#1a1a2e;
-    --cream:#FAF3E8;
+    --cream:#FBF6EE;
+    --cream-soft:#F6EFE4;
+    --cream-deep:#EFE3D6;
+    --rose:#B98089;
+    --rose-deep:#93555F;
+    --rose-light:#E3C3C7;
+    --rose-pale:#F0DADD;
+    --ink:#4A4038;
+    --ink-soft:#8C7F72;
   }
 
   *{ box-sizing:border-box; margin:0; padding:0; }
 
   html,body{
     min-height:100vh;
-    background:var(--navy-deep);
+    background:var(--cream);
     font-family:'Tajawal', sans-serif;
-    color:var(--cream);
+    color:var(--ink);
     overflow-x:hidden;
   }
 
-  /* خلفية داكنة فاخرة مع نقش هندسي إسلامي خفيف كطبقة زخرفية */
   body{
     display:flex;
     align-items:center;
@@ -40,68 +40,39 @@
     padding:24px;
     position:relative;
     background:
-      radial-gradient(circle at 50% 0%, rgba(212,175,55,0.10), transparent 60%),
-      radial-gradient(circle at 50% 100%, rgba(212,175,55,0.08), transparent 60%),
-      linear-gradient(180deg, var(--navy-light) 0%, var(--navy-deep) 55%, #08111c 100%);
+      radial-gradient(circle at 50% 0%, rgba(185,128,137,0.08), transparent 60%),
+      radial-gradient(circle at 50% 100%, rgba(185,128,137,0.08), transparent 60%),
+      linear-gradient(180deg, var(--cream) 0%, var(--cream-soft) 55%, var(--cream-deep) 100%);
   }
 
-  /* نقش زخرفي متكرر خفيف جدًا في الخلفية (girih pattern) */
-  body::before{
-    content:"";
+  /* بتلات وردية عائمة ببطء في الخلفية */
+  .petal{
     position:fixed;
-    inset:0;
+    background:var(--rose-light);
     pointer-events:none;
-    opacity:0.05;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='1'%3E%3Cpath d='M60 0 L90 30 L60 60 L30 30 Z'/%3E%3Cpath d='M60 60 L90 90 L60 120 L30 90 Z'/%3E%3Cpath d='M0 60 L30 30 L60 60 L30 90 Z'/%3E%3Cpath d='M60 60 L90 30 L120 60 L90 90 Z'/%3E%3C/g%3E%3C/svg%3E");
-    background-size:120px 120px;
+    z-index:0;
+    border-radius:50% 50% 50% 0;
+    animation:floatUp linear infinite;
+    opacity:0;
   }
 
   /* ============ البطاقة ============ */
   .card{
     position:relative;
     width:100%;
-    max-width:560px;
-    background:linear-gradient(180deg, rgba(20,30,51,0.96), rgba(13,27,42,0.98));
-    border-radius:6px;
-    padding:clamp(28px, 6vw, 56px) clamp(20px, 6vw, 48px);
+    max-width:480px;
+    background:linear-gradient(180deg, rgba(255,253,249,0.98), rgba(246,239,228,0.98));
+    border-radius:2px;
+    padding:clamp(32px, 6vw, 52px) clamp(22px, 6vw, 42px) 0;
     box-shadow:
-      0 25px 60px rgba(0,0,0,0.55),
-      0 0 0 1px rgba(212,175,55,0.15);
+      0 30px 60px rgba(74,64,56,0.14),
+      0 0 0 1px rgba(185,128,137,0.18);
     opacity:0;
     animation:cardEntrance 1.1s ease-out 0.15s forwards;
     text-align:center;
+    z-index:1;
+    overflow:hidden;
   }
-
-  /* إطار زخرفي مزدوج بذهبي */
-  .card::before{
-    content:"";
-    position:absolute;
-    inset:10px;
-    border:1px solid rgba(212,175,55,0.55);
-    pointer-events:none;
-  }
-  .card::after{
-    content:"";
-    position:absolute;
-    inset:16px;
-    border:1px solid rgba(212,175,55,0.25);
-    pointer-events:none;
-  }
-
-  /* زوايا زخرفية إسلامية (SVG) في أركان البطاقة الأربعة */
-  .corner{
-    position:absolute;
-    width:56px;
-    height:56px;
-    z-index:2;
-    opacity:0.9;
-    animation:cornerGlow 5s ease-in-out infinite;
-  }
-  .corner svg{ width:100%; height:100%; display:block; }
-  .corner-tr{ top:2px; right:2px; }
-  .corner-tl{ top:2px; left:2px; transform:scaleX(-1); }
-  .corner-br{ bottom:2px; right:2px; transform:scaleY(-1); }
-  .corner-bl{ bottom:2px; left:2px; transform:scale(-1,-1); }
 
   .card-inner{ position:relative; z-index:3; }
 
@@ -118,123 +89,139 @@
   .fade-5{ animation-delay:2.1s; }
   .fade-6{ animation-delay:2.5s; }
   .fade-7{ animation-delay:2.9s; }
+  .fade-8{ animation-delay:3.3s; }
 
-  /* ============ البسملة ============ */
+  /* ============ الآية القرآنية (مختصرة وهادئة) ============ */
   .basmala{
     font-family:'Amiri', serif;
-    font-size:clamp(15px, 3vw, 18px);
-    color:var(--gold-light);
-    margin-bottom:14px;
-    letter-spacing:0.5px;
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:1px;
+    margin-bottom:10px;
   }
-
-  /* ============ الآية القرآنية ============ */
   .ayah{
     font-family:'Amiri', 'Noto Naskh Arabic', serif;
-    font-size:clamp(16px, 3.6vw, 21px);
-    line-height:2;
-    color:var(--cream);
+    font-size:clamp(12.5px, 2.6vw, 14.5px);
+    line-height:1.9;
+    color:var(--ink-soft);
     font-weight:400;
   }
   .surah-ref{
     font-family:'Tajawal', sans-serif;
-    font-size:clamp(11px, 2.2vw, 13px);
-    color:var(--gold-mid);
+    font-size:10.5px;
+    color:var(--rose);
     letter-spacing:1.5px;
-    margin-top:10px;
+    margin-top:8px;
   }
 
-  /* ============ الفاصل الزخرفي ============ */
-  .divider{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    margin:24px 0;
-  }
-  .divider .line{
+  .hairline{
+    width:34px;
     height:1px;
-    width:60px;
-    background:linear-gradient(90deg, transparent, var(--gold-mid));
+    background:var(--rose);
+    opacity:0.5;
+    margin:20px auto;
   }
-  .divider .line.rev{ background:linear-gradient(270deg, transparent, var(--gold-mid)); }
-  .divider svg{ width:20px; height:20px; }
+
+  /* ============ الشعار/المونوغرام ============ */
+  .crest{
+    width:clamp(150px, 34vw, 190px);
+    margin:4px auto 6px;
+  }
+  .crest svg{
+    width:100%;
+    height:auto;
+    display:block;
+    animation:crestPulse 6s ease-in-out infinite;
+  }
+
+  /* ============ عبارة الدعوة ============ */
+  .invite-phrase{
+    font-size:clamp(14px, 3vw, 15.5px);
+    color:var(--ink);
+    opacity:0.85;
+    line-height:1.9;
+    margin-top:6px;
+  }
 
   /* ============ اسم المدعو ============ */
   .guest-label{
-    font-size:clamp(11px, 2.2vw, 13px);
-    color:var(--gold-mid);
+    font-size:11px;
+    color:var(--ink-soft);
     letter-spacing:2px;
+    margin-top:20px;
   }
   #guest-name{
     font-family:'Amiri', serif;
-    font-size:clamp(19px, 4.2vw, 26px);
-    color:var(--gold-light);
-    margin-top:8px;
+    font-size:clamp(18px, 4vw, 23px);
+    color:var(--rose-deep);
+    margin-top:6px;
     font-weight:700;
   }
 
-  .invite-phrase{
-    font-size:clamp(14px, 3vw, 16px);
-    color:var(--cream);
-    opacity:0.9;
-    line-height:1.9;
-    margin-top:18px;
-  }
-
-  /* ============ أسماء العروسين ============ */
+  /* ============ أسماء العروسين (مكدّسة كما في التصميم المرجعي) ============ */
   .couple{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:18px;
-    margin:22px 0 8px;
-    flex-wrap:wrap;
+    position:relative;
+    margin:22px 0 4px;
+  }
+  .couple::before{
+    content:"";
+    position:absolute;
+    inset:-16px -10px;
+    background:radial-gradient(ellipse at center, rgba(185,128,137,0.16), transparent 70%);
+    filter:blur(6px);
+    z-index:-1;
+    animation:glowPulse 4s ease-in-out infinite;
   }
   .couple .name{
+    display:block;
     font-family:'Amiri', serif;
     font-weight:700;
-    font-size:clamp(32px, 8vw, 50px);
-    background:linear-gradient(100deg, var(--gold-dark) 0%, var(--gold) 20%, var(--gold-light) 40%, #fff8e0 50%, var(--gold-light) 60%, var(--gold) 80%, var(--gold-dark) 100%);
+    font-size:clamp(38px, 10vw, 56px);
+    line-height:1.25;
+    background:linear-gradient(100deg, var(--rose-deep) 0%, var(--rose) 25%, var(--rose-light) 45%, #fbe9ea 55%, var(--rose-light) 65%, var(--rose) 80%, var(--rose-deep) 100%);
     background-size:250% 100%;
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
-    animation:shimmer 4.5s linear infinite;
-  }
-  .couple .amp{
-    font-family:'Amiri', serif;
-    font-size:clamp(22px, 5vw, 30px);
-    color:var(--gold-mid);
-    line-height:1;
+    animation:shimmer 5s linear infinite;
   }
 
-  /* ============ التاريخ ============ */
-  .date-box{
-    margin-top:26px;
-    padding-top:20px;
-    border-top:1px solid rgba(212,175,55,0.25);
+  .mashaallah{
+    font-size:clamp(12.5px, 2.8vw, 14px);
+    color:var(--ink-soft);
+    margin-top:10px;
+    letter-spacing:0.5px;
   }
-  .day-name{
-    font-size:clamp(15px, 3.2vw, 18px);
-    color:var(--gold-light);
-    font-weight:700;
-    letter-spacing:1px;
+
+  /* ============ صف التاريخ ============ */
+  .date-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    margin-top:22px;
   }
-  .full-date{
-    font-family:'Amiri', serif;
-    font-size:clamp(20px, 4.5vw, 27px);
-    color:var(--cream);
-    margin-top:6px;
-    letter-spacing:1px;
+  .date-row .seal{ width:20px; height:20px; opacity:0.8; }
+  .day-name, .full-date{
+    font-size:clamp(13px, 2.8vw, 15px);
+    color:var(--ink);
+    letter-spacing:0.5px;
   }
+  .full-date{ font-family:'Amiri', serif; font-weight:700; color:var(--rose-deep); }
 
   /* ============ العبارة الختامية ============ */
   .closing{
-    margin-top:24px;
-    font-size:clamp(13px, 2.8vw, 15px);
-    color:var(--gold-mid);
+    margin-top:20px;
+    font-size:clamp(12.5px, 2.8vw, 14px);
+    color:var(--ink-soft);
     line-height:1.9;
+  }
+
+  /* ============ الزخرفة الزهرية أسفل البطاقة ============ */
+  .floral-footer{
+    display:block;
+    width:100%;
+    margin-top:26px;
   }
 
   /* ============ الحركات ============ */
@@ -250,93 +237,174 @@
     0%{ background-position:0% 50%; }
     100%{ background-position:250% 50%; }
   }
-  @keyframes cornerGlow{
-    0%,100%{ opacity:0.75; }
-    50%{ opacity:1; }
+  @keyframes glowPulse{
+    0%,100%{ opacity:0.55; transform:scale(1); }
+    50%{ opacity:1; transform:scale(1.06); }
+  }
+  @keyframes crestPulse{
+    0%,100%{ transform:scale(1); }
+    50%{ transform:scale(1.02); }
+  }
+  @keyframes floatUp{
+    0%{ transform:translateY(0) translateX(0) rotate(0deg); opacity:0; }
+    10%{ opacity:0.7; }
+    90%{ opacity:0.4; }
+    100%{ transform:translateY(-100vh) translateX(24px) rotate(200deg); opacity:0; }
   }
 
   @media (max-width:420px){
-    .couple{ gap:10px; }
-    .corner{ width:40px; height:40px; }
+    .date-row{ gap:10px; }
   }
 </style>
 </head>
 <body>
 
-  <div class="card">
-    <!-- زوايا زخرفية إسلامية -->
-    <div class="corner corner-tr">
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M56 0 V16 C40 16 16 40 16 56 H0 V0 Z" stroke="#D4AF37" stroke-width="1"/>
-        <path d="M56 12 V20 C34 20 20 34 20 56 H12 V44 C12 26 26 12 44 12 H56 Z" stroke="#D4AF37" stroke-width="0.7"/>
-        <circle cx="44" cy="12" r="3" stroke="#D4AF37" stroke-width="0.8"/>
-      </svg>
-    </div>
-    <div class="corner corner-tl">
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M56 0 V16 C40 16 16 40 16 56 H0 V0 Z" stroke="#D4AF37" stroke-width="1"/>
-        <path d="M56 12 V20 C34 20 20 34 20 56 H12 V44 C12 26 26 12 44 12 H56 Z" stroke="#D4AF37" stroke-width="0.7"/>
-        <circle cx="44" cy="12" r="3" stroke="#D4AF37" stroke-width="0.8"/>
-      </svg>
-    </div>
-    <div class="corner corner-br">
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M56 0 V16 C40 16 16 40 16 56 H0 V0 Z" stroke="#D4AF37" stroke-width="1"/>
-        <path d="M56 12 V20 C34 20 20 34 20 56 H12 V44 C12 26 26 12 44 12 H56 Z" stroke="#D4AF37" stroke-width="0.7"/>
-        <circle cx="44" cy="12" r="3" stroke="#D4AF37" stroke-width="0.8"/>
-      </svg>
-    </div>
-    <div class="corner corner-bl">
-      <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M56 0 V16 C40 16 16 40 16 56 H0 V0 Z" stroke="#D4AF37" stroke-width="1"/>
-        <path d="M56 12 V20 C34 20 20 34 20 56 H12 V44 C12 26 26 12 44 12 H56 Z" stroke="#D4AF37" stroke-width="0.7"/>
-        <circle cx="44" cy="12" r="3" stroke="#D4AF37" stroke-width="0.8"/>
-      </svg>
-    </div>
+  <div id="petals"></div>
 
+  <div class="card">
     <div class="card-inner">
 
-      <!-- البسملة -->
+      <!-- البسملة والآية القرآنية -->
       <p class="basmala fade-item fade-1">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-
-      <!-- الآية القرآنية -->
       <p class="ayah fade-item fade-1">
         ﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ﴾
       </p>
       <p class="surah-ref fade-item fade-1">سورة الروم — الآية 21</p>
 
-      <!-- فاصل زخرفي -->
-      <div class="divider fade-item fade-2">
-        <span class="line"></span>
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z" stroke="#D4AF37" stroke-width="1"/>
+      <div class="hairline fade-item fade-2"></div>
+
+      <!-- الشعار: إكليل ورد متصل بسيط يحيط بحرفي العروسين -->
+      <div class="crest fade-item fade-3">
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- غصن دائري متصل -->
+          <circle cx="100" cy="100" r="66" fill="none" stroke="#B98089" stroke-width="1.1"/>
+
+          <!-- أوراق صغيرة موزعة على الغصن (كل مجموعة ورقتان متقابلتان) -->
+          <g fill="none" stroke="#B98089" stroke-width="1">
+            <g transform="translate(100,100) rotate(25)">
+              <path d="M0,-66 q-9,-9 -20,-7 q7,11 20,7 Z"/>
+              <path d="M0,-66 q9,9 20,7 q-7,-11 -20,-7 Z" transform="rotate(14)"/>
+            </g>
+            <g transform="translate(100,100) rotate(65)">
+              <path d="M0,-66 q-9,-9 -20,-7 q7,11 20,7 Z"/>
+              <path d="M0,-66 q9,9 20,7 q-7,-11 -20,-7 Z" transform="rotate(14)"/>
+            </g>
+            <g transform="translate(100,100) rotate(115)">
+              <path d="M0,-66 q-9,-9 -20,-7 q7,11 20,7 Z"/>
+              <path d="M0,-66 q9,9 20,7 q-7,-11 -20,-7 Z" transform="rotate(14)"/>
+            </g>
+            <g transform="translate(100,100) rotate(155)">
+              <path d="M0,-66 q-9,-9 -20,-7 q7,11 20,7 Z"/>
+              <path d="M0,-66 q9,9 20,7 q-7,-11 -20,-7 Z" transform="rotate(14)"/>
+            </g>
+            <g transform="translate(100,100) rotate(205)">
+              <path d="M0,-66 q-9,-9 -20,-7 q7,11 20,7 Z"/>
+              <path d="M0,-66 q9,9 20,7 q-7,-11 -20,-7 Z" transform="rotate(14)"/>
+            </g>
+            <g transform="translate(100,100) rotate(245)">
+              <path d="M0,-66 q-9,-9 -20,-7 q7,11 20,7 Z"/>
+              <path d="M0,-66 q9,9 20,7 q-7,-11 -20,-7 Z" transform="rotate(14)"/>
+            </g>
+            <g transform="translate(100,100) rotate(295)">
+              <path d="M0,-66 q-9,-9 -20,-7 q7,11 20,7 Z"/>
+              <path d="M0,-66 q9,9 20,7 q-7,-11 -20,-7 Z" transform="rotate(14)"/>
+            </g>
+            <g transform="translate(100,100) rotate(335)">
+              <path d="M0,-66 q-9,-9 -20,-7 q7,11 20,7 Z"/>
+              <path d="M0,-66 q9,9 20,7 q-7,-11 -20,-7 Z" transform="rotate(14)"/>
+            </g>
+          </g>
+
+          <!-- وردة أعلى الإكليل -->
+          <g transform="translate(100,34)" fill="none" stroke="#B98089" stroke-width="0.9">
+            <circle cx="0" cy="-4.5" r="4.5"/>
+            <circle cx="4.3" cy="-1.4" r="4.5"/>
+            <circle cx="2.6" cy="3.6" r="4.5"/>
+            <circle cx="-2.6" cy="3.6" r="4.5"/>
+            <circle cx="-4.3" cy="-1.4" r="4.5"/>
+            <circle cx="0" cy="0" r="2" fill="#E3C3C7" stroke="none"/>
+          </g>
+
+          <!-- وردة أسفل الإكليل -->
+          <g transform="translate(100,166)" fill="none" stroke="#B98089" stroke-width="0.9">
+            <circle cx="0" cy="-4.5" r="4.5"/>
+            <circle cx="4.3" cy="-1.4" r="4.5"/>
+            <circle cx="2.6" cy="3.6" r="4.5"/>
+            <circle cx="-2.6" cy="3.6" r="4.5"/>
+            <circle cx="-4.3" cy="-1.4" r="4.5"/>
+            <circle cx="0" cy="0" r="2" fill="#E3C3C7" stroke="none"/>
+          </g>
+
+          <!-- وردتان صغيرتان على الجانبين -->
+          <g transform="translate(34,100)" fill="none" stroke="#B98089" stroke-width="0.8">
+            <circle cx="0" cy="-3.4" r="3.4"/>
+            <circle cx="3.2" cy="-1" r="3.4"/>
+            <circle cx="2" cy="2.7" r="3.4"/>
+            <circle cx="-2" cy="2.7" r="3.4"/>
+            <circle cx="-3.2" cy="-1" r="3.4"/>
+            <circle cx="0" cy="0" r="1.5" fill="#E3C3C7" stroke="none"/>
+          </g>
+          <g transform="translate(166,100)" fill="none" stroke="#B98089" stroke-width="0.8">
+            <circle cx="0" cy="-3.4" r="3.4"/>
+            <circle cx="3.2" cy="-1" r="3.4"/>
+            <circle cx="2" cy="2.7" r="3.4"/>
+            <circle cx="-2" cy="2.7" r="3.4"/>
+            <circle cx="-3.2" cy="-1" r="3.4"/>
+            <circle cx="0" cy="0" r="1.5" fill="#E3C3C7" stroke="none"/>
+          </g>
+
+          <!-- الحرفان الأولان لاسمي العروسين -->
+          <text x="123" y="112" text-anchor="middle" font-family="Amiri, serif" font-weight="700" font-size="38" fill="#93555F">ح</text>
+          <text x="77" y="112" text-anchor="middle" font-family="Amiri, serif" font-weight="700" font-size="38" fill="#93555F">ن</text>
+          <!-- فاصل صغير بين الحرفين -->
+          <circle cx="100" cy="98" r="1.7" fill="#B98089"/>
         </svg>
-        <span class="line rev"></span>
       </div>
+
+      <p class="invite-phrase fade-item fade-4">نتشرف بدعوتكم لحضور حفل زفاف</p>
 
       <!-- اسم المدعو (يُقرأ من الرابط) -->
-      <p class="guest-label fade-item fade-3">تتشرف عائلتا العروسين بدعوة</p>
-      <p id="guest-name" class="fade-item fade-3">حضرة المدعو/ة الكريم/ة</p>
+      <p class="guest-label fade-item fade-4">تتشرف عائلتا العروسين بدعوة</p>
+      <p id="guest-name" class="fade-item fade-4">السيدة</p>
 
-      <p class="invite-phrase fade-item fade-4">
-        يتشرفون بدعوتكم لحضور حفل زفاف
-      </p>
-
-      <!-- اسما العريس والعروسة -->
+      <!-- اسما العريس والعروس مكدّسان -->
       <div class="couple fade-item fade-5">
-        <span class="name">علي</span>
-        <span class="amp">و</span>
-        <span class="name">ياسمين</span>
+        <span class="name">حمد</span>
+        <span class="name">نورة</span>
       </div>
+      <p class="mashaallah fade-item fade-6">وذلك بمشيئة الله تعالى</p>
 
       <!-- التاريخ -->
-      <div class="date-box fade-item fade-6">
-        <p class="day-name">يوم الخميس</p>
-        <p class="full-date">1 يناير 2027</p>
+      <div class="date-row fade-item fade-7">
+        <span class="day-name">يوم الخميس</span>
+        <svg class="seal" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2 L14.2 9.2 L21 12 L14.2 14.8 L12 22 L9.8 14.8 L3 12 L9.8 9.2 Z" stroke="#B98089" stroke-width="1"/>
+        </svg>
+        <span class="full-date">1 يناير 2027</span>
       </div>
 
       <!-- عبارة ختامية -->
-      <p class="closing fade-item fade-7">يسعدنا حضوركم ومشاركتنا الفرحة</p>
+      <p class="closing fade-item fade-8">بحضوركم تكتمل أفراحنا حياكم الله</p>
+
+      <!-- زخرفة زهرية أسفل البطاقة -->
+      <svg class="floral-footer fade-item fade-8" viewBox="0 0 400 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="floralPattern" width="80" height="70" patternUnits="userSpaceOnUse">
+            <path d="M40,70 C40,55 36,46 40,34" fill="none" stroke="#B98089" stroke-width="1"/>
+            <path d="M40,58 C34,54 30,56 27,62" fill="none" stroke="#B98089" stroke-width="1"/>
+            <path d="M40,48 C46,44 50,46 53,52" fill="none" stroke="#B98089" stroke-width="1"/>
+            <g transform="translate(40,30)">
+              <circle cx="0" cy="0" r="5" fill="none" stroke="#B98089" stroke-width="0.9"/>
+              <circle cx="-6" cy="3" r="5" fill="none" stroke="#B98089" stroke-width="0.9"/>
+              <circle cx="6" cy="3" r="5" fill="none" stroke="#B98089" stroke-width="0.9"/>
+              <circle cx="-4" cy="-6" r="5" fill="none" stroke="#B98089" stroke-width="0.9"/>
+              <circle cx="4" cy="-6" r="5" fill="none" stroke="#B98089" stroke-width="0.9"/>
+              <circle cx="0" cy="0" r="2.4" fill="#E3C3C7"/>
+            </g>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="400" height="70" fill="url(#floralPattern)"/>
+      </svg>
 
     </div>
   </div>
@@ -346,7 +414,7 @@
   const urlParams = new URLSearchParams(window.location.search);
   const rawGuestName = urlParams.get('name');
 
-  let displayName = 'حضرة المدعو/ة الكريم/ة';
+  let displayName = 'السيدة';
 
   if (rawGuestName) {
     let decodedName = rawGuestName;
@@ -356,10 +424,33 @@
       // في حال احتوى الاسم على رموز غير قابلة لفك الترميز، نستخدم القيمة كما وردت
       decodedName = rawGuestName;
     }
-    displayName = `حضرة السيد/ة ${decodedName} الكريم/ة`;
+    displayName = `السيدة ${decodedName}`;
   }
 
   document.getElementById('guest-name').textContent = displayName;
+
+  // إنشاء بتلات وردية عائمة برفق في الخلفية لإضفاء حيوية هادئة على البطاقة
+  const petalContainer = document.getElementById('petals');
+  const petalCount = 16;
+
+  for (let i = 0; i < petalCount; i++) {
+    const petal = document.createElement('span');
+    petal.className = 'petal';
+
+    const size = 6 + Math.random() * 8;
+    const left = Math.random() * 100;
+    const duration = 12 + Math.random() * 10;
+    const delay = Math.random() * 14;
+
+    petal.style.width = `${size}px`;
+    petal.style.height = `${size}px`;
+    petal.style.left = `${left}vw`;
+    petal.style.bottom = `-20px`;
+    petal.style.animationDuration = `${duration}s`;
+    petal.style.animationDelay = `${delay}s`;
+
+    petalContainer.appendChild(petal);
+  }
 </script>
 
 </body>
