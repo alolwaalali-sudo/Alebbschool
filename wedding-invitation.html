@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دعوة زفاف | حمد ونورة</title>
+<title>دعوة عقد قران | غانم ولولوة</title>
 
 <!-- خطوط جوجل: Amiri للنصوص الدينية والعناوين والأسماء، Tajawal للنصوص العامة -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -223,6 +223,14 @@
     width:100%;
     margin-top:26px;
   }
+  /* تلألؤ هادئ للنقاط الصغيرة داخل الباقة */
+  .floral-footer .dot{
+    animation:twinkle 3.5s ease-in-out infinite;
+  }
+  @keyframes twinkle{
+    0%,100%{ opacity:0.25; }
+    50%{ opacity:0.95; }
+  }
 
   /* ============ الحركات ============ */
   @keyframes cardEntrance{
@@ -264,17 +272,8 @@
   <div class="card">
     <div class="card-inner">
 
-      <!-- البسملة والآية القرآنية -->
-      <p class="basmala fade-item fade-1">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-      <p class="ayah fade-item fade-1">
-        ﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ﴾
-      </p>
-      <p class="surah-ref fade-item fade-1">سورة الروم — الآية 21</p>
-
-      <div class="hairline fade-item fade-2"></div>
-
-      <!-- الشعار: إكليل ورد متصل بسيط يحيط بحرفي العروسين -->
-      <div class="crest fade-item fade-3">
+      <!-- الشعار: إكليل ورد متصل بسيط يحيط بحرفي العروسين (بداية الدعوة) -->
+      <div class="crest fade-item fade-1">
         <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
           <!-- غصن دائري متصل -->
           <circle cx="100" cy="100" r="66" fill="none" stroke="#B98089" stroke-width="1.1"/>
@@ -354,23 +353,25 @@
           </g>
 
           <!-- الحرفان الأولان لاسمي العروسين -->
-          <text x="123" y="112" text-anchor="middle" font-family="Amiri, serif" font-weight="700" font-size="38" fill="#93555F">ح</text>
-          <text x="77" y="112" text-anchor="middle" font-family="Amiri, serif" font-weight="700" font-size="38" fill="#93555F">ن</text>
+          <text x="123" y="112" text-anchor="middle" font-family="Amiri, serif" font-weight="700" font-size="38" fill="#93555F">غ</text>
+          <text x="77" y="112" text-anchor="middle" font-family="Amiri, serif" font-weight="700" font-size="38" fill="#93555F">ل</text>
           <!-- فاصل صغير بين الحرفين -->
           <circle cx="100" cy="98" r="1.7" fill="#B98089"/>
         </svg>
       </div>
 
-      <p class="invite-phrase fade-item fade-4">نتشرف بدعوتكم لحضور حفل زفاف</p>
+      <div class="hairline fade-item fade-2"></div>
 
       <!-- اسم المدعو (يُقرأ من الرابط) -->
-      <p class="guest-label fade-item fade-4">تتشرف عائلتا العروسين بدعوة</p>
-      <p id="guest-name" class="fade-item fade-4">السيدة</p>
+      <p id="guest-name" class="fade-item fade-3"></p>
 
-      <!-- اسما العريس والعروس مكدّسان -->
+      <!-- عبارة الدعوة -->
+      <p class="invite-phrase fade-item fade-4">نتشرف بدعوتكم لحضور حفل عقد قران</p>
+
+      <!-- اسما العريس والعروس تحت بعض -->
       <div class="couple fade-item fade-5">
-        <span class="name">حمد</span>
-        <span class="name">نورة</span>
+        <span class="name">غانم</span>
+        <span class="name">لولوة</span>
       </div>
       <p class="mashaallah fade-item fade-6">وذلك بمشيئة الله تعالى</p>
 
@@ -386,24 +387,82 @@
       <!-- عبارة ختامية -->
       <p class="closing fade-item fade-8">بحضوركم تكتمل أفراحنا حياكم الله</p>
 
-      <!-- زخرفة زهرية أسفل البطاقة -->
-      <svg class="floral-footer fade-item fade-8" viewBox="0 0 400 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="floralPattern" width="80" height="70" patternUnits="userSpaceOnUse">
-            <path d="M40,70 C40,55 36,46 40,34" fill="none" stroke="#B98089" stroke-width="1"/>
-            <path d="M40,58 C34,54 30,56 27,62" fill="none" stroke="#B98089" stroke-width="1"/>
-            <path d="M40,48 C46,44 50,46 53,52" fill="none" stroke="#B98089" stroke-width="1"/>
-            <g transform="translate(40,30)">
-              <circle cx="0" cy="0" r="5" fill="none" stroke="#B98089" stroke-width="0.9"/>
-              <circle cx="-6" cy="3" r="5" fill="none" stroke="#B98089" stroke-width="0.9"/>
-              <circle cx="6" cy="3" r="5" fill="none" stroke="#B98089" stroke-width="0.9"/>
-              <circle cx="-4" cy="-6" r="5" fill="none" stroke="#B98089" stroke-width="0.9"/>
-              <circle cx="4" cy="-6" r="5" fill="none" stroke="#B98089" stroke-width="0.9"/>
-              <circle cx="0" cy="0" r="2.4" fill="#E3C3C7"/>
-            </g>
-          </pattern>
-        </defs>
-        <rect x="0" y="0" width="400" height="70" fill="url(#floralPattern)"/>
+      <!-- زخرفة زهرية أسفل البطاقة: باقة ورد خطية متناظرة -->
+      <svg class="floral-footer fade-item fade-8" viewBox="0 0 400 100" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- النصف الأيسر من الباقة -->
+        <g id="halfSpray" fill="none" stroke="#B98089" stroke-width="1" stroke-linecap="round">
+          <!-- الغصن الرئيسي المنساب نحو الطرف -->
+          <path d="M188,90 C160,96 132,85 106,88 C78,91 54,82 24,90"/>
+          <!-- غصين ثانوي -->
+          <path d="M170,88 C150,78 128,76 112,80"/>
+
+          <!-- أوراق موزعة على الغصن -->
+          <g transform="translate(148,90) rotate(-8)">
+            <path d="M0,0 C-5,-6 -13,-9 -21,-8 C-19,-1 -10,3 0,0 Z"/>
+            <path d="M-2,-0.6 C-8,-3.4 -14,-5.8 -19,-7.4" stroke-width="0.6"/>
+          </g>
+          <g transform="translate(122,84) rotate(18) scale(0.85)">
+            <path d="M0,0 C-5,-6 -13,-9 -21,-8 C-19,-1 -10,3 0,0 Z"/>
+            <path d="M-2,-0.6 C-8,-3.4 -14,-5.8 -19,-7.4" stroke-width="0.6"/>
+          </g>
+          <g transform="translate(88,90) rotate(-14) scale(0.9)">
+            <path d="M0,0 C-5,-6 -13,-9 -21,-8 C-19,-1 -10,3 0,0 Z"/>
+            <path d="M-2,-0.6 C-8,-3.4 -14,-5.8 -19,-7.4" stroke-width="0.6"/>
+          </g>
+          <g transform="translate(50,86) rotate(10) scale(0.75)">
+            <path d="M0,0 C-5,-6 -13,-9 -21,-8 C-19,-1 -10,3 0,0 Z"/>
+            <path d="M-2,-0.6 C-8,-3.4 -14,-5.8 -19,-7.4" stroke-width="0.6"/>
+          </g>
+
+          <!-- وردة جانبية -->
+          <g transform="translate(158,76) scale(0.8)">
+            <path d="M0.6,-1.2 C2.4,0.4 1.6,3 -0.8,3.2 C-3.8,3.4 -5.2,0 -3.4,-2.6 C-1.2,-5.8 3.6,-5.6 5.8,-2.8 C8.4,0.6 6.8,5.6 2.8,7.2 C-2.2,9.2 -7.8,6.4 -9,1.2 C-10.4,-4.8 -6,-10.4 0.2,-11"/>
+            <path d="M-10.5,-4 C-12.5,1 -11.5,7 -6.5,10.5"/>
+            <path d="M-3.5,12 C1.5,13.5 7,12 10.5,8"/>
+            <path d="M12.5,4 C13.5,-1 11.5,-6.5 7,-9.5"/>
+            <path d="M4,-12.5 C-1,-14 -6.5,-12.5 -10,-9"/>
+            <circle cx="-0.8" cy="-0.4" r="1.3" fill="#E3C3C7" stroke="none"/>
+          </g>
+
+          <!-- برعم مغلق مع كأسيتين -->
+          <g transform="translate(106,80) scale(0.9)">
+            <path d="M0,2 C-3,-4 -1.5,-9 0,-11 C1.5,-9 3,-4 0,2 Z"/>
+            <path d="M-2.5,0 C-6,-3 -7,-7 -6,-10"/>
+            <path d="M2.5,0 C6,-3 7,-7 6,-10"/>
+            <path d="M0,2 C0,5 1,7 3,8.5" stroke-width="0.8"/>
+          </g>
+          <g transform="translate(58,80) scale(0.65)">
+            <path d="M0,2 C-3,-4 -1.5,-9 0,-11 C1.5,-9 3,-4 0,2 Z"/>
+            <path d="M-2.5,0 C-6,-3 -7,-7 -6,-10"/>
+            <path d="M2.5,0 C6,-3 7,-7 6,-10"/>
+            <path d="M0,2 C0,5 1,7 3,8.5" stroke-width="0.8"/>
+          </g>
+
+          <!-- نقاط متلألئة -->
+          <circle class="dot" cx="138" cy="72" r="1.4" fill="#B98089" stroke="none"/>
+          <circle class="dot" cx="96" cy="72" r="1.2" fill="#B98089" stroke="none" style="animation-delay:0.9s"/>
+          <circle class="dot" cx="68" cy="93" r="1.1" fill="#B98089" stroke="none" style="animation-delay:1.7s"/>
+          <circle class="dot" cx="34" cy="78" r="1.3" fill="#B98089" stroke="none" style="animation-delay:2.4s"/>
+        </g>
+
+        <!-- النصف الأيمن: انعكاس النصف الأيسر -->
+        <use href="#halfSpray" transform="translate(400,0) scale(-1,1)"/>
+
+        <!-- الوردة المركزية الكبيرة -->
+        <g transform="translate(200,68) scale(1.25)" fill="none" stroke="#B98089" stroke-width="1" stroke-linecap="round">
+          <path d="M0.6,-1.2 C2.4,0.4 1.6,3 -0.8,3.2 C-3.8,3.4 -5.2,0 -3.4,-2.6 C-1.2,-5.8 3.6,-5.6 5.8,-2.8 C8.4,0.6 6.8,5.6 2.8,7.2 C-2.2,9.2 -7.8,6.4 -9,1.2 C-10.4,-4.8 -6,-10.4 0.2,-11"/>
+          <path d="M-10.5,-4 C-12.5,1 -11.5,7 -6.5,10.5"/>
+          <path d="M-3.5,12 C1.5,13.5 7,12 10.5,8"/>
+          <path d="M12.5,4 C13.5,-1 11.5,-6.5 7,-9.5"/>
+          <path d="M4,-12.5 C-1,-14 -6.5,-12.5 -10,-9"/>
+          <circle cx="-0.8" cy="-0.4" r="1.3" fill="#E3C3C7" stroke="none"/>
+        </g>
+        <!-- ورقتان تحتضنان الوردة المركزية -->
+        <g fill="none" stroke="#B98089" stroke-width="1" stroke-linecap="round">
+          <path d="M182,84 C174,80 168,72 168,64 C176,66 182,74 182,84 Z"/>
+          <path d="M218,84 C226,80 232,72 232,64 C224,66 218,74 218,84 Z"/>
+        </g>
       </svg>
 
     </div>
@@ -414,20 +473,24 @@
   const urlParams = new URLSearchParams(window.location.search);
   const rawGuestName = urlParams.get('name');
 
-  let displayName = 'السيدة';
+  let displayName = '';
 
   if (rawGuestName) {
-    let decodedName = rawGuestName;
     try {
-      decodedName = decodeURIComponent(rawGuestName);
+      displayName = decodeURIComponent(rawGuestName);
     } catch (e) {
       // في حال احتوى الاسم على رموز غير قابلة لفك الترميز، نستخدم القيمة كما وردت
-      decodedName = rawGuestName;
+      displayName = rawGuestName;
     }
-    displayName = `السيدة ${decodedName}`;
   }
 
-  document.getElementById('guest-name').textContent = displayName;
+  const guestNameEl = document.getElementById('guest-name');
+  if (displayName) {
+    guestNameEl.textContent = displayName;
+  } else {
+    // إخفاء العنصر إذا لم يوجد اسم في الرابط
+    guestNameEl.style.display = 'none';
+  }
 
   // إنشاء بتلات وردية عائمة برفق في الخلفية لإضفاء حيوية هادئة على البطاقة
   const petalContainer = document.getElementById('petals');
